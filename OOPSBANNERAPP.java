@@ -1,69 +1,64 @@
 /**
-@author developer
-@version 7
+* OOPSBannerApp UC1-OOPS Banner Display Application 
+* Demonstrates OOP without getter/setter - using public fields
+* @author Developer
+* @version 7.0
 */
-class OOPSBannerInnerClass{
-	static class CharacterPattern{
-		static String[] oPattern = {
-			"    ***    ",
-			" **     ** ",
-			"**       **",
-			"**       **",
-			"**       **",
-			"**       **",
-			"**       **",
-			" **     ** ",
-			"    ***    "
-		};
-		static String[] pPattern = {
-			" *******  ",
-			" **    ** ",
-			" **     **",
-			" **    ** ",
-			" ****     ",
-			" **       ",
-			" **       ",
-			" **       ",
-			" **       "
-		};
-		static String[] sPattern = {
-			"   *****  ",
-			"  **      ",
-			" **       ",
-			"  **      ",
-			"   ***    ",
-			"      ** ",
-			"       **",
-			"      ** ",
-			"  ******  "
-		};
-		static String[] getPattern(char ch){
-			switch(Character.toUpperCase(ch)){
-				case 'O' : return oPattern;
-				case 'P' : return pPattern;
-				case 'S' : return sPattern;
-				default : return  new String[] {
-					" ",
-					" ",
-					" ",
-					" ",
-					" ",
-					" ",
-					" ",
-					" ",
-					" "
-				};
-			}
-		}
+
+import java.util.HashMap;
+
+public class OOPSBannerApp {
+
+	public static HashMap<Character, String[]> createHashMap() {
+		HashMap<Character, String[]> map = new HashMap<>();
+		map.put('O', new String[] {
+				"    ***    ",
+				" **     ** ",
+				"**       **",
+				"**       **",
+				"**       **",
+				"**       **",
+				"**       **",
+				" **     ** ",
+				"    ***    "
+		});
+		map.put('S', new String[] {
+				"   *****  ",
+				"  **      ",
+				" **       ",
+				"  **      ",
+				"   ***    ",
+				"      ** ",
+				"       **",
+				"      ** ",
+				"  ******  "
+		});
+		map.put('P', new String[] {
+				" *******  ",
+				" **    ** ",
+				" **     **",
+				" **    ** ",
+				" ****     ",
+				" **       ",
+				" **       ",
+				" **       ",
+				" **       "
+		});
+		return map;
 	}
-	public static void main(String[] args) {
-		String name = "OOPS";
-		for(int i=0; i<9; i++){
-			for(char ch : name.toCharArray()){
-				String[] pattern = CharacterPattern.getPattern(ch);
-				System.out.print(pattern[i] + "  ");
+
+	public static void DisplayBannner(String Message, HashMap<Character, String[]> map) {
+		int patternHeight = map.get('O').length;
+		for (int i = 0; i < patternHeight; i++) {
+			for (char c : Message.toCharArray()) {
+				System.out.print(map.get(c)[i] + " ");
 			}
 			System.out.println();
 		}
 	}
+    public static void main(String[] args) {
+        HashMap<Character, String[]> map = createHashMap();
+        String message = "OOPS";
+        DisplayBannner(message, map);
+    }
 }
