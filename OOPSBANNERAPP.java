@@ -1,10 +1,10 @@
-/*
+/**
 @author developer
-@version 6
+@version 7
 */
-class OOPSBannerFunction{
-	public static String[] getOPattern(){
-		return new String[] {
+class OOPSBannerInnerClass{
+	static class CharacterPattern{
+		static String[] oPattern = {
 			"    ***    ",
 			" **     ** ",
 			"**       **",
@@ -15,9 +15,7 @@ class OOPSBannerFunction{
 			" **     ** ",
 			"    ***    "
 		};
-	}
-	public static String[] getPPattern(){
-		return new String[] {
+		static String[] pPattern = {
 			" *******  ",
 			" **    ** ",
 			" **     **",
@@ -28,9 +26,7 @@ class OOPSBannerFunction{
 			" **       ",
 			" **       "
 		};
-	}
-	public static String[] getSPattern(){
-		return new String[] {
+		static String[] sPattern = {
 			"   *****  ",
 			"  **      ",
 			" **       ",
@@ -41,14 +37,33 @@ class OOPSBannerFunction{
 			"      ** ",
 			"  ******  "
 		};
+		static String[] getPattern(char ch){
+			switch(Character.toUpperCase(ch)){
+				case 'O' : return oPattern;
+				case 'P' : return pPattern;
+				case 'S' : return sPattern;
+				default : return  new String[] {
+					" ",
+					" ",
+					" ",
+					" ",
+					" ",
+					" ",
+					" ",
+					" ",
+					" "
+				};
+			}
+		}
 	}
-	public static void main(String[] args){
-		// continuous memory to store elements
-		String oPattern[] = getOPattern();
-		String pPattern[] = getPPattern();
-		String sPattern[] = getSPattern();
-		for(int i = 0; i < oPattern.length;i++){
-			System.out.println(oPattern[i] + " " + oPattern[i] + " " + pPattern[i] + " " + sPattern[i]);
+	public static void main(String[] args) {
+		String name = "OOPS";
+		for(int i=0; i<9; i++){
+			for(char ch : name.toCharArray()){
+				String[] pattern = CharacterPattern.getPattern(ch);
+				System.out.print(pattern[i] + "  ");
+			}
+			System.out.println();
 		}
 	}
 }
