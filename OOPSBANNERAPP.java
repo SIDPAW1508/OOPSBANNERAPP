@@ -1,17 +1,54 @@
-/**
-* OOPSBannerApp UC1-OOPS Banner Display Application 
-
-* @author Developer
-* @version 1.0
+/*
+@author developer
+@version 6
 */
-
-public class OOPSBannerApp{
-	public static void main (String[] args){
-		System.out.println("Try Programmiz");
-		String names[]={"siddhi","tulsee","teena" , " a" ," b"};
-		for (string name:names){
-			System.out.print(name+ " , ");
+class OOPSBannerFunction{
+	public static String[] getOPattern(){
+		return new String[] {
+			"    ***    ",
+			" **     ** ",
+			"**       **",
+			"**       **",
+			"**       **",
+			"**       **",
+			"**       **",
+			" **     ** ",
+			"    ***    "
+		};
+	}
+	public static String[] getPPattern(){
+		return new String[] {
+			" *******  ",
+			" **    ** ",
+			" **     **",
+			" **    ** ",
+			" ****     ",
+			" **       ",
+			" **       ",
+			" **       ",
+			" **       "
+		};
+	}
+	public static String[] getSPattern(){
+		return new String[] {
+			"   *****  ",
+			"  **      ",
+			" **       ",
+			"  **      ",
+			"   ***    ",
+			"      ** ",
+			"       **",
+			"      ** ",
+			"  ******  "
+		};
+	}
+	public static void main(String[] args){
+		// continuous memory to store elements
+		String oPattern[] = getOPattern();
+		String pPattern[] = getPPattern();
+		String sPattern[] = getSPattern();
+		for(int i = 0; i < oPattern.length;i++){
+			System.out.println(oPattern[i] + " " + oPattern[i] + " " + pPattern[i] + " " + sPattern[i]);
 		}
 	}
-	
 }
