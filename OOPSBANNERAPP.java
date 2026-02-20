@@ -5,9 +5,15 @@
 @version 1.0
 */
 
-public class OOPSBannerApp{
+class Message{
 	public static void main (String[] args){
-		System.out.print("OOPS");
+		System.out.println("   ***  "+" " +"   **  "+"  "+ "****   " +"  "+"  ****  ");
+		System.out.println(" **   **"+" " +" **  **"+"  "+ "**  ** " +"  "+" **     ");
+		System.out.println(" **   **"+" " +" **  **"+"  "+ "**  ** " +"  "+"  ****  ");
+		System.out.println(" **   **"+" " +" **  **"+"  "+ "** *   " +"  "+"     ** ");
+		System.out.println(" **   **"+" " +" **  **"+"  "+ "**     " +"  "+" **   **"); 
+		System.out.println("   ***  "+" " +"   **  "+"  "+ "**     " +"  "+"  **** ");
+		
 	}
 	
 }
