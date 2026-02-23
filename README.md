@@ -21,9 +21,3 @@ OOPSBANNERAPP is a simple Java application that demonstrates basic Object-Orient
 - **UC7:** Use inner classes for encapsulation
 - **UC8:** Use HashMaps for character pattern mapping
 
-
-## Author
-Developer
-
-## License
-This project is for educational purposes.
